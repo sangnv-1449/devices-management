@@ -1,12 +1,15 @@
-import React, { Component} from 'react';
-import './App.css';
-import Application from './components/application/Application'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { Component } from "react";
+import { BrowserRouter } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import Application from "./components/application/Application";
 
 class App extends Component {
-  render(){
+  render() {
     return (
-      <Application />
+      <BrowserRouter>
+        <Application />
+      </BrowserRouter>
     );
   }
 }

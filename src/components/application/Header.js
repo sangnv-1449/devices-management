@@ -1,22 +1,26 @@
-import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+import React from "react";
+import { Navbar, Nav, Form, FormControl, NavDropdown } from "react-bootstrap";
 
 const Header = () => {
-  return(
-    <Navbar bg="dark" variant="dark">
-      <Nav className="mr-auto">
-        <Navbar.Brand href="#">Home</Navbar.Brand>
-        <Nav.Link href="#">Users</Nav.Link>
-        <Nav.Link href="#">Devices</Nav.Link>
-        <Nav.Link href="#">Requests</Nav.Link>
-      </Nav>
-      <Nav>
-        <Nav.Link href="#">SignIn</Nav.Link>
-        <Nav.Link href="#">SignOut</Nav.Link>
-        <Nav.Link href="#">Account</Nav.Link>
-      </Nav>
+  return (
+    <Navbar collapseOnSelect bg="light" variant="light" expand="lg" sticky="top">
+      <Navbar.Brand href="/">Devices Management</Navbar.Brand>
+      <Form inline>
+        <FormControl placeholder="Search" />
+      </Form>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="ml-auto">
+          <NavDropdown title="User Settings" id="collasible-nav-dropdown">
+            <NavDropdown.Item href="#">Profile</NavDropdown.Item>
+            <NavDropdown.Item href="#">Setting</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#">Signout</NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+      </Navbar.Collapse>
     </Navbar>
-  )
-}
+  );
+};
 
 export default Header;
